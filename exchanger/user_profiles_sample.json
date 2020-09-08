@@ -1,0 +1,5 @@
+{
+    "USER_NAME": "your_username",
+    "USER_PASSWORD": "your_password",
+    "DRIVER_PATH": "path_to_your_chromedriver"
+}
