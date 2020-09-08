@@ -11,8 +11,8 @@ from datetime import datetime
 
 
 USER_PROFILE_SRC = "./user_profiles.json"
-REFRESH_RATE = 60
-eps = 10
+REFRESH_RATE = 300
+eps = 15
 delay = 0.1
 
 # load user profiles
