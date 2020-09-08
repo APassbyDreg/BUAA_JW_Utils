@@ -14,14 +14,15 @@ USER_PROFILE_SRC = "./user_profiles.json"
 REFRESH_RATE = 60
 eps = 10
 delay = 0.1
-course_id = 'B3J063240'
-target_time = datetime(2020, 9, 8, 0, 17, 00)
 
 # load user profiles
 with open(USER_PROFILE_SRC, "r") as f:
     user_profiles = json.load(f)
 
 # initialize
+course_id = user_profiles["COURSE_ID"]
+time_list = user_profiles["TIME"]
+target_time = datetime(time_list[0],time_list[1],time_list[2],time_list[3],time_list[4],time_list[5])
 browser = webdriver.Chrome(user_profiles["DRIVER_PATH"])
 wait = WebDriverWait(browser, 5)
 browser.get("http://jwxt.buaa.edu.cn:7001/ieas2.1")
@@ -44,6 +45,7 @@ while True:
     if diff > REFRESH_RATE + eps:
         time.sleep(REFRESH_RATE)
     else:
+        print("loaded, schedualed to exchange @ " + target_time.strftime("%Y-%m-%d_%H-%M-%S"))
         time.sleep(diff)
         browser.find_element_by_xpath('//*[@id="2020-2021-1-' + course_id + '-001"]').click()
         try:

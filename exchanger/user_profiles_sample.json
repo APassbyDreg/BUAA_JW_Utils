@@ -1,5 +1,9 @@
 {
     "USER_NAME": "your_username",
     "USER_PASSWORD": "your_password",
-    "DRIVER_PATH": "path_to_your_chromedriver"
+    "DRIVER_PATH": "path_to_your_chromedriver",
+    "_comment_": "set following time as [year, month, day, hour, minute, second]",
+    "TIME": [2020,9,10,0,0,0],
+    "COURSE_ID": "the course you want to exchange",
+    "COLLEGE": "the college the course were in (e.g. 06, 42)"
 }
