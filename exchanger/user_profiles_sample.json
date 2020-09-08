@@ -5,5 +5,5 @@
     "_comment_": "set following time as [year, month, day, hour, minute, second]",
     "TIME": [2020,9,10,0,0,0],
     "COURSE_ID": "the course you want to exchange",
-    "COLLEGE": "the college the course were in (e.g. 06, 42)"
+    "COLLEGE": "the college the course were in, surrounded by '' (e.g. '06', '42')"
 }
