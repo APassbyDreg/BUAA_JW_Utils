@@ -1,4 +1,4 @@
-# 北航换课工具 | BUAA course exchanger
+# 北航教务工具集 | BUAA JW Utils
 
 ## 简介
 
@@ -8,14 +8,39 @@
 
 （目前的逻辑换的是一般专业课，但是理论上可以通过修改具体逻辑来达到换任何课程的效果）
 
-## 使用环境（经过验证的测试环境样例）
+## 使用环境
 
 - python 3.7
-- selenium 3.141.0
-- chrome 85
-- chromedriver for chrome 85
+- selenium
+- chromedriver & chrome
 
-## 使用方法
+## 工具列表
+
+- 自动评教工具 [autoscore](https://github.com/APassbyDreg/BUAA_JW_utils/tree/master/autoscore)
+- 自动换课工具 [exchanger](https://github.com/APassbyDreg/BUAA_JW_utils/tree/master/exchanger)
+
+---
+
+## 自动评教工具
+
+### step 1
+
+配置好各种环境，注意 `chromedriver` 的路径需要在 `PATH` 中
+
+### step 2
+
+按照 `./autoscore/user_profiles_sample.json` 的内容，在 `./autoscore` 中创建并填写文件 `user_profiles.json`
+
+### step 3
+
+```shell
+cd {PATH_TO_REPOSITORY}/autoscore
+python autoscore.py
+```
+
+---
+
+## 自动换课工具
 
 ### step 1
 
@@ -41,7 +66,7 @@ cd {PATH_TO_REPOSITORY}/exchanger
 python getter.py
 ```
 
-## 注意事项
+### 注意事项
 
 - 脚本有风险，使用需谨慎
 - 为了您的人身安全着想，请勿将本代码修改为自动抢课脚本，这是不道德的行为
