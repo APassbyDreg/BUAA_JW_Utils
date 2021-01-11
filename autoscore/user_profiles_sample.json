@@ -1,0 +1,9 @@
+{
+    "USER_NAME": "your_username",
+    "USER_PASSWORD": "your_password",
+    "DRIVER_PATH": "path_to_your_chromedriver",
+    "__comment0__": "rate param controls the rate method (either -1, 0 or 1)",
+    "__comment1__": "-1 / 1 refers to worst / best",
+    "__comment2__": "0 refers to randomly select score",
+    "RATE": 1
+}
