@@ -47,7 +47,7 @@ while True:
     else:
         print("loaded, schedualed to exchange @ " + target_time.strftime("%Y-%m-%d_%H-%M-%S"))
         time.sleep(diff)
-        browser.find_element_by_xpath('//*[@id="2020-2021-1-' + course_id + '-001"]').click()
+        browser.find_element_by_xpath('//*[@id="' + user_profiles["SEMESTER"] + '-' + course_id + '-001"]').click()
         try:
             browser.switch_to.alert.accept()
             print("time: " + datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))

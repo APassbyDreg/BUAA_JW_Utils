@@ -53,7 +53,7 @@ while True:
         print("loaded, schedualed to exchange @ " + target_time.strftime("%Y-%m-%d_%H-%M-%S"))
         time.sleep(diff + delay)
         browser.execute_script('queryLike()')
-        select_course = 'saveXsxk("2020-2021-1-' + course_id + '-001");'
+        select_course = 'saveXsxk("' + user_profiles["SEMESTER"] + '-' + course_id + '-001");'
         browser.execute_script(select_course)
         redo = False
         try:
