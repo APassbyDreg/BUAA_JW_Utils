@@ -3,3 +3,5 @@ spider.py
 test.*
 delay_checker.py
 debug.log
+*.html
+.vscode
