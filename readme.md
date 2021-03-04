@@ -1,14 +1,13 @@
 # 北航教务工具集 | BUAA JW Utils
 
-## 简介
+一个简单的 Python Based 北航教务工具集
 
-这是一个使用 selenium + Python + 一点点 JavaScript 实现的北航教务工具集
+## 依赖
 
-## 使用环境
-
-- python 3.7
-- selenium
-- chromedriver & chrome
+- Python 3.6+
+- Selenium
+- BeautifulSoup4
+- Chromedriver & Chrome
 
 ## 工具列表
 
