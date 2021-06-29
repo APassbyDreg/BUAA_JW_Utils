@@ -23,10 +23,9 @@ with open(USER_PROFILE_SRC, "r") as f:
 # initialize
 browser = webdriver.Chrome(user_profiles["DRIVER_PATH"])
 wait = WebDriverWait(browser, 5)
-browser.get("http://jwxt.buaa.edu.cn:7001/ieas2.1")
 
 # goto login page
-browser.find_element_by_xpath('//*[@id="notice"]/div[2]/div[1]/p[2]/input').click()
+browser.get("https://sso.buaa.edu.cn/login?service=http%3A%2F%2Fjwxt.buaa.edu.cn%3A8081%2Fieas2.1%2Fwelcome%3Ffalg%3D1")
 wait.until(EC.frame_to_be_available_and_switch_to_it(browser.find_element_by_id('loginIframe')))
 
 # login
@@ -35,17 +34,15 @@ browser.find_element_by_id("pwPassword").send_keys(user_profiles["USER_PASSWORD"
 browser.find_element_by_xpath('//*[@id="content-con"]/div[1]/div[7]/input').click()
 
 # nav to score page
-browser.get("http://jwxt.buaa.edu.cn:7001/ieas2.1/xspj/Fxpj_fy")
+browser.get("http://jwxt.buaa.edu.cn:8081/ieas2.1/xspj/Fxpj_fy")
 
-# browser.find_element_by_xpath('//*[@id="queryform"]/div[3]/table/tbody/tr[2]/td[6]/span[1]/a[1]').click()
-
+# all teachers
 elems = browser.find_elements_by_xpath('//*[@id="queryform"]/div[3]/table/tbody/*/td[6]/span[1]/*')
-
 while len(elems) > 0:
     curr = elems.pop(0)
     curr.click()
 
-    # 打分
+    # score
     numcols = len(browser.find_elements_by_xpath('//*[@id="zbtable"]/tbody/tr')) - 2
     for i in range(numcols):
         if user_profiles["RATE"] == 0:
@@ -61,11 +58,11 @@ while len(elems) > 0:
             score += user_profiles["RATE"]
         first = browser.find_element_by_xpath(f'//*[@id="zbtable"]/tbody/tr[{i+2}]/td[3]/input[{score}]').click()
 
-    # 推荐
+    # recommend
     if user_profiles['RATE'] >= 0:
-        browser.execute_script("document.getElementsByName('sftj')[0].value = 3")
+        browser.execute_script("document.getElementsByName('sftj')[0].value = 1")
     else:
-        browser.execute_script("document.getElementsByName('sftj')[0].value = 4")
+        browser.execute_script("document.getElementsByName('sftj')[0].value = 2")
 
     # submit
     browser.find_element_by_xpath('//*[@id="bt"]').click()
