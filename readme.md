@@ -13,6 +13,7 @@
 
 - 自动评教工具 [autoscore](https://github.com/APassbyDreg/BUAA_JW_utils/tree/master/autoscore)
 - 自动换课工具 [exchanger](https://github.com/APassbyDreg/BUAA_JW_utils/tree/master/exchanger)
+- 雨课堂挂机工具 [rain-classroom](https://github.com/APassbyDreg/BUAA_JW_utils/tree/master/rain-classroom)
 
 ---
 
@@ -75,3 +76,22 @@ python getter.py
 - 脚本有风险，使用需谨慎
 - 为了您的人身安全着想，请勿将本代码修改为自动抢课脚本，这是不道德的行为
 - 脚本使用过程中可能出现卡在某个网页没加载出来的情况，请注意关注运行情况
+
+---
+
+## 雨课堂挂机工具
+
+解放点击「下一单元」的双手，让您自动挂机刷课
+
+### step 1
+
+配置好各种环境，对于 webdriver，你可以前往对应的网站下载
+
+### step 2
+
+运行如下脚本
+
+```shell
+cd {PATH_TO_REPOSITORY}/rain-classroom
+python script.py
+```

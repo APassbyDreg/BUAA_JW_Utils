@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    自动化将在一分钟后开始，请在此期间内<b>在本页面内</b>打开课程列表页面，注意不要有其它页面存在
+    <br>
+    自动跳转剩余<span id="time-left" class="color: red; font-weight: bold">**</span>
+    <script>
+        window.t = 5;
+        setInterval(function f() {
+            document.getElementById("time-left").textContent = window.t;
+            window.t = window.t - 1;
+            if (window.t <= 0) {
+                window.location = "https://buaa.yuketang.cn/pro/portal/home/";
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>
