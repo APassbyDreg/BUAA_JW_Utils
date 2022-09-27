@@ -42,7 +42,7 @@ for i, item in enumerate(course_list):
                     timer = driver.find_element(By.TAG_NAME, "xt-time")
                     tcurr = timer.find_element(By.XPATH, "./span[1]").text
                     tfull = timer.find_element(By.XPATH, "./span[2]").text
-                    done = done or (len(tcurr) > 0 and len(tfull) > 0 and tcurr == tfull)
+                    done = done or (len(tcurr) > 0 and len(tfull) > 0 and tfull != "00:00:00" and tcurr == tfull)
                 except:
                     pass
                 # 停一会
